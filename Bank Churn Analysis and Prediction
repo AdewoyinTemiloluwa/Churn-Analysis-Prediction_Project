@@ -44,6 +44,14 @@ The primary dataset usde for this analysis is the "Bank Customer Churn Predictio
   - Active Member: 1 for Active and 0 for Not Active.
   - Credit Card: 1 for Yes and 0 for No.
   - Visualization: Initial visualizations were created in Excel to explore trends and patterns in the data.
+Churn Analyis Dashboard:
+![churn][dashbaord]
+
+[dashboard]: (https://github.com/AdewoyinTemiloluwa/Churn-Analysis-Prediction_Project/blob/main/Bank%20Churn%20Dashboard1.jpg)
+
+Filtered Churn Analyis Dashboard:
+![churn][dashbaord]
+[dashboard]: (https://github.com/AdewoyinTemiloluwa/Churn-Analysis-Prediction_Project/blob/main/Bank%20Churn%20Dashboard.jpg)
 
 2. **Exploratory Data Analysis (EDA)**
   - Statistical Summary: An overview of the dataset's statistics was generated to understand distributions and central tendencies.
