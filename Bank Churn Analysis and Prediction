@@ -1,0 +1,102 @@
+# Bank Churn Analysis and Prediction
+
+## Table of Contents
+  - [Project Overview](Project-Overview)
+  - [Introduction](Introduction)
+  - [Objectives](Objectives)
+  - [Data Source and Dataset](Data-Source-and-Dataset)
+  - [Tools Used](Tools-Used)
+  - [Methodology](Methodology)
+  - [Observations](Observations)
+  - [Recommendations](Recommendations)
+  - [Conclusion](Conclusion)
+  - [References](References)
+
+### Project Overview
+This project aims to analyze and predict customer churn in the banking sector using a comprehensive dataset from Kaggle. By understanding customer behavior and identifying factors that lead to churn, banks can implement strategies to enhance customer retention and satisfaction. Data engineering, analysis, and visualization were conducted in Excel, while exploratory data analysis, model development, and evaluation were carried out using Jupyter Notebook (Python).
+
+###   Introduction
+Customer churn, the phenomenon of clients discontinuing their relationship with a service provider, is a significant challenge for banks. This project leverages data analysis to uncover insights that can help mitigate churn rates and improve customer experiences.
+
+### Objectives
+1. Analyze customer demographics and behaviors that contribute to churn.
+2. Develop predictive models to identify customers at risk of leaving.
+3. Provide actionable insights and strategies to reduce churn rates.
+
+### Data Source and Dataset
+The primary dataset usde for this analysis is the "Bank Customer Churn Prediction.csv" file is sourced from Kaggle [Download here](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset/data) and contains information on customer demographics, account details, and churn status. Key features include age, gender, country, account balance, active_member, and credit score.
+
+### Tools Used
+1. Excel: For initial data cleaning and visualization.
+2. Jupyter Notebook: For exploratory data analysis and model development using Python.
+3. Libraries: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, and XGBoost.
+
+### Methodology
+1. **Data Engineering, Analysis, and Visualization on Excel**
+  - Data Cleaning: The dataset was thoroughly examined for inconsistencies and irrelevant entries. It was confirmed that there were no missing values, ensuring data integrity for further analysis (Kumar et al., 2020).
+  - Feature Creation: New columns were added to enhance the dataset:
+  - Age Bracket: Customers were categorized into age groups: 18-30, 31-40, 41-50, 51-60, 61-70, 71-80, and Above 80.
+  - Credit Score Ratings: Customers were classified based on credit scores into categories: Poor (350-579), Fair (580-669), Good (670-739), Very Good (740-799), and Excellent (800-850).
+  - Tenure Range: Customer tenure was grouped into three ranges: 0-2 years, 3-5 years, and 6-10 years.
+  - Balance Category: Accounts were labeled as Zero Balance Account (ZBA) for accounts with no balance and Funded Bank Account (FBA) for accounts with a positive balance.
+  - Column Renaming: Columns were renamed for clarity:
+  - Churn: 1 for Churned and 0 for Not Churned.
+  - Active Member: 1 for Active and 0 for Not Active.
+  - Credit Card: 1 for Yes and 0 for No.
+  - Visualization: Initial visualizations were created in Excel to explore trends and patterns in the data.
+
+2. **Exploratory Data Analysis (EDA)**
+  - Statistical Summary: An overview of the dataset's statistics was generated to understand distributions and central tendencies.
+  - Correlation Analysis: Correlations between features were analyzed to identify potential relationships influencing churn.
+  - Visualizations: Key visualizations included:
+  - Churn Distribution: A count plot to visualize overall churn rates.
+  - Gender Distribution : A breakdown of gender distribution of customers.
+  - Age Distribution: A histogram depicting the age distribution of customers.
+These analyses were performed using *Jupyter Notebook with Python, utilizing libraries such as Matplotlib and Seaborn for visual representation* (Hastie et al., 2009).
+3. **Model Development and Evaluation**
+  - Feature and Target Definition: Features were defined by dropping the churn column, with the target variable being the churn status.
+  - Train-Test Split: The dataset was split into training and testing sets, with 80% of the data used for training and 20% for testing, ensuring stratification to maintain churn class distribution.
+  - Preprocessing: A preprocessing pipeline was established, including:
+  - Standard Scaling: Numerical features were standardized for uniformity.
+  - One-Hot Encoding: Categorical features were encoded for model input.
+  - Model Selection: The following models were developed:
+  - Random Forest Classifier: Implemented with 200 estimators and a maximum depth of 10, this model achieved an accuracy score of 82.5% on the test set, along with a detailed classification report.
+  - XGBoost Classifier: This advanced model underwent hyperparameter tuning using GridSearchCV to find optimal parameters, achieving an accuracy score of 86.5% on the test set.
+  - Metrics: Performance metrics such as accuracy, precision, recall, and F1-score were calculated to assess model effectiveness.
+
+### Observations
+1. **Total Customers and Churn Rate**:
+  - Total Customers: 10,000
+  - Total Churned Customers: 2,037
+  - Churn Rate: 20.4%
+This means approximately 1 in 5 customers are leaving the bank.
+2. **Customer Demographics**:
+  - Gender: There are more male customers (1,139) than female customers (898).
+  - Country: The majority of customers are from Germany (814), followed by Spain (810) and France (413).
+  - Age Group: The age group with the highest churn rate and customer count might provide more insight.
+3. **Balance Status**:
+Customers with a "Zero Balance Account" (ZBA) are significantly more (1,537) compared to those with a "Full Balance Account" (FBA) (500). This could indicate that those with ZBA might be more likely to churn.
+4. **Activity Level**:
+Majority of customers (1,302) are not active, compared to 735 active customers. Engaging inactive customers could reduce churn.
+5. **Credit Card Status**:
+More customers have a credit card (1,424) compared to those who do not (613).
+6. **Tenure**:
+The tenure distribution shows that newer customers (0-2 years) have lower churn rates compared to those who have been with the bank longer (6-10 years).
+7. **Products**:
+Analyzing the number of products used by customers could highlighted that single-product users are more likely to churn compared to multi-product users.
+8. **Credit Score**:
+Understanding the distribution of customers across different credit scores, lower credit scorescustomers are more prone to churn.
+
+
+### Recommendations
+1. Targeted Retention Programs: Focus on engaging inactive customers and those with Zero Balance Accounts through personalized offers and better services.
+2. Customer Segmentation: Develop specific strategies for different age groups and tenure categories to address their unique needs and reduce churn.
+3. Product Bundling: Encourage the use of multiple products to increase customer loyalty.
+4. Proactive Communication: Enhance communication with customers who have lower credit scores to offer support and prevent churn.
+
+### Conclusion
+This bank churn analysis and prediction project offers valuable insights into customer behavior and the dynamics of churn. By leveraging data engineering, exploratory analysis, and predictive modeling, the insights gained will inform actionable retention strategies for banks, enabling them to proactively address customer attrition.
+
+### References
+  - Hastie, T., Tibshirani, R., & Friedman, J. (2009). The Elements of Statistical Learning: Data Mining, Inference, and Prediction. Springer.
+  - Kumar, A., Singh, A., & Gupta, R. (2020). Customer Churn Prediction in Banking Sector: A Review. International Journal of Data Analytics, 8(4), 245-263.
